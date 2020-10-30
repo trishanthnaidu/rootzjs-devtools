@@ -4,6 +4,7 @@ import { DomTreeComponent } from '../Charts/DomTree';
 
 export const ComponentRootz = props => {
     const styl = Styles();
+
     return (
         <div className={styl.root}>
             <DomTreeComponent />

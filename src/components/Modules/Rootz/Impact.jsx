@@ -33,7 +33,7 @@ export const Component = ({
                         <div className={styl.actionSection}>
                                 <List subheader={
                                         <ListSubheader component="div" className={styl.sectionTextHeader} >
-                                                Actions
+                                                Select Actions
                                         </ListSubheader>
                                 }>
                                         <Divider className={styl.divider} />

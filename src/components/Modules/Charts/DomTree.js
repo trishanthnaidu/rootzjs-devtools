@@ -69,6 +69,7 @@ export const DomTreeComponent = () => {
 
         React.useEffect(() => {
                 const diagram = init(theme);
+                diagram.animationManager.initialAnimationStyle = go.AnimationManager.None;
                 diagram.model = go.Model.fromJson({
                         "class": "go.GraphLinksModel",
                         "copiesArrays": true,

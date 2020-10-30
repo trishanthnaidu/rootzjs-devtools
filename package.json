@@ -7,8 +7,8 @@
     "@rootzjs/core": "^1.0.12",
     "autosuggest-highlight": "^3.1.1",
     "css-loader": "^3.2.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.9.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "^3.2.0"
   },
   "scripts": {
@@ -68,6 +68,7 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-destructuring": "6.23.0",
     "babel-polyfill": "6.26.0",
+    "crypto-js": "^4.0.0",
     "d3": "^5.15.0",
     "d3-array": "^2.4.0",
     "d3-fetch": "^1.1.2",
@@ -84,6 +85,7 @@
     "node-fetch": "^2.6.0",
     "react-error-boundary": "^1.2.5",
     "react-gojs": "^4.9.0",
+    "react-new-window": "^0.1.2",
     "react-router-dom": "^5.1.2",
     "react-screen-orientation": "0.0.4",
     "react-simple-maps": "^1.0.0-beta.0",

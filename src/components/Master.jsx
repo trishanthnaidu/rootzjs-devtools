@@ -3,7 +3,7 @@ import React from 'react';
 import { AppDrawer } from './Drawer';
 import { CssBaseline } from './Matlib';
 import { AppTheme } from '../theme/App';
-import { createNode } from '@rootzjs/core';
+import { createNode, getAllState } from '@rootzjs/core';
 import { AppHeader } from './Header/AppHeader';
 import { windowErrorHandler, OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
@@ -28,14 +28,12 @@ const initialState = {
 }
 
 const Component = ({ state, props, actions }) => {
-      const { theme } = state;
-
       React.useEffect(() => {
             windowErrorHandler(actions.onErrorOccured);
       }, []);
 
       return (
-            <AppTheme theme={theme} forComponent="APP">
+            <AppTheme theme={state.theme} forComponent="APP">
                   <ApplicationMaster {...props} {...state} />
             </AppTheme>
       )

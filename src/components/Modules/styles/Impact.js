@@ -3,9 +3,8 @@ import { fade, makeStyles } from "../../Matlib";
 export const Styles = makeStyles(theme => ({
         root: {
                 width: "100%",
-                height: "93vh",
+                height: "95vh",
                 display: "flex",
-                marginTop: "2vh",
                 flexDirection: "row"
         },
         divider: theme.divider["00"],
@@ -19,17 +18,18 @@ export const Styles = makeStyles(theme => ({
         },
         activeSection: {
                 borderRight: `solid 5px ${theme.palette.primary.main}`,
-                backgroundColor: fade(theme.palette.primary.main, 0.075),
+                backgroundColor: fade(theme.palette.primary.main, 0.175),
 
                 "&:hover": {
-                        backgroundColor: fade(theme.palette.primary.main, 0.075)
+                        backgroundColor: fade(theme.palette.primary.main, 0.175)
                 },
                 "& span": {
+                        fontWeight: "bold",
                         color: theme.text[10],
                 }
         },
         sectionText: {
-                color: theme.text[40],
+                color: theme.text[30],
 
                 "& span": {
                         fontSize: 15
@@ -39,7 +39,7 @@ export const Styles = makeStyles(theme => ({
                 paddingLeft: 20,
                 lineHeight: "30px",
                 fontWeight: "bold",
-                color: theme.text[60],
+                color: theme.text[50],
                 textTransform: "uppercase",
 
                 "& span": {

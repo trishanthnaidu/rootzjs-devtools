@@ -132,8 +132,8 @@ export const ActionTreeComponent = () => {
         const theme = useTheme();
 
         React.useEffect(() => {
-                debugger;
                 const diagram = init(theme);
+                diagram.animationManager.initialAnimationStyle = go.AnimationManager.None;
                 diagram.model = go.Model.fromJson({
                         "class": "go.GraphLinksModel",
                         "nodeDataArray": [

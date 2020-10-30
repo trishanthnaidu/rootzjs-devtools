@@ -5,6 +5,7 @@ export {
         Box,
         Fab,
         Tab,
+        Tabs,
         Chip,
         Card,
         Menu,

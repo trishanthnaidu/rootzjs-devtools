@@ -36,18 +36,19 @@ export const Styles = makeStyles(theme => ({
             minWidth: 40
       },
       iconSvg: {
-            fontSize: 25
+            width: 40,
+            fontSize: 20,
       },
       iconRemove: {
             fontSize: 11
       },
       listItem: {
-            paddingLeft: 40,
+            padding: "4px 0 4px 14px",
       },
       activeSection: {
-            backgroundColor: fade(theme.palette.primary.main, 0.075),
+            backgroundColor: fade(theme.palette.primary.main, 0.175),
             "&:hover": {
-                  backgroundColor: fade(theme.palette.primary.main, 0.075)
+                  backgroundColor: fade(theme.palette.primary.main, 0.175)
             },
             "& svg": {
                   fill: theme.palette.primary.main
@@ -64,8 +65,8 @@ export const Styles = makeStyles(theme => ({
             }
       },
       sectionTextHeader: {
-            marginTop: 25,
-            paddingLeft: 40,
+            paddingLeft: 24,
+            margin: "15px 0 0",
             lineHeight: "30px",
             fontWeight: "bold",
             color: theme.text[60],

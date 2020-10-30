@@ -5,15 +5,11 @@ export const Styles = makeStyles(theme => ({
             display: "flex",
       },
       appBar: {
-            height: 40,
+            height: 48,
             boxShadow: "none",
             zIndex: theme.zIndex.drawer + 1,
             borderBottom: `solid 1px ${theme.text[80]}`,
             backgroundColor: theme.background["00"],
-
-            "& > .MuiToolbar-dense": {
-                  minHeight: 40
-            }
       },
       divider: theme.divider["00"],
       dividerVertical: theme.verticalDivider["00"],
@@ -23,6 +19,10 @@ export const Styles = makeStyles(theme => ({
       logoContainer: {
             flex: 1,
             marginRight: 10,
+            
+            "& button": {
+                  padding: "7px 0 0 0",
+            }
       },
       logo: {
             height: 35,
