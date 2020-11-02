@@ -9,7 +9,7 @@ export const Styles = makeStyles(theme => ({
         },
         divider: theme.divider["00"],
         listItem: {
-                padding: "2px 10px 4px 20px",
+                padding: "2px 10px 4px 30px",
         },
         actionSection: {
                 width: 300,
@@ -18,10 +18,10 @@ export const Styles = makeStyles(theme => ({
         },
         activeSection: {
                 borderRight: `solid 5px ${theme.palette.primary.main}`,
-                backgroundColor: fade(theme.palette.primary.main, 0.175),
+                backgroundColor: theme.text[90],
 
                 "&:hover": {
-                        backgroundColor: fade(theme.palette.primary.main, 0.175)
+                        backgroundColor: fade(theme.text[90], 0.25),
                 },
                 "& span": {
                         fontWeight: "bold",

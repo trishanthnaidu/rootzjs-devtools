@@ -16,7 +16,7 @@ const Component = ({
                   <div className={styl.drawerBody}>
                         <List subheader={
                               <ListSubheader component="div" className={styl.sectionTextHeader} >
-                                    Rootz
+                                    Trees
                               </ListSubheader>
                         }>
                               {
@@ -37,9 +37,10 @@ const Component = ({
                                     })
                               }
                         </List>
+                        <Divider className={styl.dividerMain} />
                         <List subheader={
                               <ListSubheader component="div" className={styl.sectionTextHeader} >
-                                    Differenz
+                                    Diffs
                               </ListSubheader>
                         }>
                               {

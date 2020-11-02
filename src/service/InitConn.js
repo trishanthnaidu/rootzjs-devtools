@@ -8,6 +8,6 @@ export const initConn = () => {
                 return;
         }
         // connection
-        let conn = new ws('ws://localhost:1918');
+        let conn = new ws('ws://b811c7f89d3c.ngrok.io/api/tunnels/12af4c4c-0ab4-4ba4-8e76-9548dcfba944');
         return conn;
 }

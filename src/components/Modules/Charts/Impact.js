@@ -46,7 +46,7 @@ const init = theme => {
                                         return impacted ? "#CA3112" : theme.text[70];
                                 }),
                                 new go.Binding('fill', 'impacted', function (impacted) {
-                                        return impacted ? "#ebd8d6" : theme.background[20];
+                                        return impacted ? "#EBD8D6" : theme.background[20];
                                 }),
                         ),
                         $(go.TextBlock, "Page",
@@ -66,13 +66,13 @@ const init = theme => {
                         $(go.Shape,  // the link shape
                                 { strokeWidth: 1 },
                                 new go.Binding('stroke', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 }),
                         ),
                         $(go.Shape,  // the arrowhead
                                 { toArrow: "circle", stroke: null, scale: 0.75 },
                                 new go.Binding('fill', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 })),
                 );
 
@@ -86,6 +86,9 @@ export const ImpactTreeComponent = () => {
         React.useEffect(() => {
                 const diagram = init(theme);
                 diagram.animationManager.initialAnimationStyle = go.AnimationManager.None;
+                diagram.nodeSelectionAdornmentTemplate = false;
+                diagram.linkSelectionAdornmentTemplate = false;
+                diagram.groupSelectionAdornmentTemplate = false;
                 diagram.model = go.Model.fromJson({
                         "class": "go.GraphLinksModel",
                         "copiesArrays": true,

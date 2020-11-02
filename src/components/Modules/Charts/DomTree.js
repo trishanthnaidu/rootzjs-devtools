@@ -70,6 +70,9 @@ export const DomTreeComponent = () => {
         React.useEffect(() => {
                 const diagram = init(theme);
                 diagram.animationManager.initialAnimationStyle = go.AnimationManager.None;
+                diagram.nodeSelectionAdornmentTemplate = false;
+                diagram.linkSelectionAdornmentTemplate = false;
+                diagram.groupSelectionAdornmentTemplate = false;
                 diagram.model = go.Model.fromJson({
                         "class": "go.GraphLinksModel",
                         "copiesArrays": true,

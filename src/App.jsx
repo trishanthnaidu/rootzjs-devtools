@@ -32,14 +32,14 @@ const Component = ({
 }) => {
       React.useEffect(() => {
             let conn = initConn();
-            conn.onopen = function () {
+            conn.onopen = function () {debugger;
                   console.log(
                         "%cconnetion Ok...",
                         "color: #fff; font-size:12px;  border-radius: 3px; padding: 2px 0 2px 7px; text-align: center; background-color: #e91e63a9;"
                   );
                   conn.send(JSON.stringify(config));
             };
-            conn.onerror = function (error) {
+            conn.onerror = function (error) {debugger;
                   console.log(
                         "%cSorry, but there\'s some problem with your connection or the server is down",
                         "color: #fff; font-size:12px;  border-radius: 3px; padding: 2px 0 2px 7px; text-align: center; background-color: #e91e63a9;"
@@ -59,7 +59,7 @@ const Component = ({
             };
       }, []);
 
-      if (!state.hasGuestArrived) {
+      if (state.hasGuestArrived) {
             return (
                   <Master {...props} version="0.1.0" />
             )

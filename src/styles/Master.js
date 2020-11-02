@@ -10,7 +10,7 @@ export const Styles = makeStyles(theme => ({
       playgroundMasterContainer: {
             width: "100%",
             display: "flex",
-            margin: theme.isMobile ? "75px 10px" : "55px 0 0",
+            margin: theme.isMobile ? "75px 10px" : "50px 0 0",
             justifyContent: "center",
             "& h1": {
                   fontSize: 15,

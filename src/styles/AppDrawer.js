@@ -17,7 +17,7 @@ export const Styles = makeStyles(theme => ({
       },
       dividerMain: {
             flexShrink: 0,
-            backgroundColor: theme.text[70]
+            backgroundColor: theme.text[80]
       },
       drawerPaper: {
             width: drawerWidth,
@@ -43,7 +43,7 @@ export const Styles = makeStyles(theme => ({
             fontSize: 11
       },
       listItem: {
-            padding: "4px 0 4px 24px",
+            padding: "4px 0 4px 34px",
       },
       activeSection: {
             backgroundColor: fade(theme.palette.primary.main, 0.175),

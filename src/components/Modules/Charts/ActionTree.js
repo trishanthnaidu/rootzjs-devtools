@@ -1,6 +1,7 @@
 import React from 'react';
 import * as go from 'gojs';
 import { fade, useTheme } from "../../Matlib";
+import CurvedLinkReshapingTool from './CurvedLink';
 import { Styles } from '../styles/charts';
 
 // define a custom ForceDirectedLayout for this sample
@@ -36,6 +37,7 @@ const init = theme => {
                         textAlign: "center",
                         stroke: theme.text["00"],
                         wrap: go.TextBlock.WrapFit,
+                        cursor: "pointer"
                 }
         }
 
@@ -47,6 +49,7 @@ const init = theme => {
                                 "toolManager.mouseWheelBehavior": go.ToolManager.WheelZoom,
                                 initialAutoScale: go.Diagram.Uniform,
                                 "linkingTool.direction": go.LinkingTool.ForwardsOnly,
+                                "linkReshapingTool": new CurvedLinkReshapingTool(),
                                 layout: $(go.ForceDirectedLayout, { arrangementSpacing: new go.Size(500, 200), arrangesToOrigin: true }),
                                 "undoManager.isEnabled": true
                         });
@@ -72,11 +75,13 @@ const init = theme => {
         myDiagram.linkTemplate =
                 $(go.Link,  // the whole link panel
                         {
+                                reshapable: true, 
                                 toShortLength: 60,
+                                relinkableTo: true,
+                                relinkableFrom: true, 
                                 curve: go.Link.Bezier,
                                 routing: go.Link.Normal,
                                 adjusting: go.Link.TableColumn,
-                                reshapable: true, relinkableFrom: true, relinkableTo: true,
                         },
                         new go.Binding("points").makeTwoWay(),
                         { curve: go.Link.Bezier, toShortLength: 5 },
@@ -105,7 +110,7 @@ const init = theme => {
                                         },
                                         new go.Binding('visible', 'impacted', function (impacted) {
                                                 return Boolean(impacted);
-                                        }),),
+                                        })),
                                 $(go.TextBlock, "transition",  // the label text
                                         {
                                                 margin: 5,
@@ -113,7 +118,7 @@ const init = theme => {
                                                 editable: false,
                                                 textAlign: "center",
                                                 stroke: theme.text["00"],
-                                                wrap: go.TextBlock.WrapFit,
+                                                wrap: go.TextBlock.FlipVertical,
                                         },
                                         new go.Binding('visible', 'impacted', function (impacted) {
                                                 return Boolean(impacted);
@@ -134,6 +139,9 @@ export const ActionTreeComponent = () => {
         React.useEffect(() => {
                 const diagram = init(theme);
                 diagram.animationManager.initialAnimationStyle = go.AnimationManager.None;
+                diagram.nodeSelectionAdornmentTemplate = false;
+                diagram.linkSelectionAdornmentTemplate = false;
+                diagram.groupSelectionAdornmentTemplate = false;
                 diagram.model = go.Model.fromJson({
                         "class": "go.GraphLinksModel",
                         "nodeDataArray": [
