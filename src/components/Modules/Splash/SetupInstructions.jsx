@@ -48,54 +48,53 @@ const Component = ({
                                 <span className={styl.braces}>;</span>
 
                                 <div className={styl.nextLine}></div>
-                                <div className={styl.comments}>// Config from Tracking Details (copy latest)</div>
+                                <div className={styl.comments}>// Copy config from Tracking Details (copy latest)</div>
                                 <span className={styl.dataType}>const&nbsp;</span>
-                                <span className={styl.variable}>config&nbsp;</span>
+                                <span className={styl.operator}>devtoolsConfig&nbsp;</span>
                                 <span className={styl.equals}>=&nbsp;</span>
                                 <span className={styl.braces}>{"{"}</span>
                                 <div className={styl.codeLine}>
-                                        <span className={styl.key}>type</span>
+                                        <span className={styl.key}>Component</span>
                                         <span className={styl.operator}>:&nbsp;</span>
-                                        <span className={styl.string}>"guest"</span>
-                                        <span className={styl.braces}>,</span>
+                                        <span className={styl.braces}>App,</span>
                                 </div>
                                 <div className={styl.codeLine}>
-                                        <span className={styl.key}>sessionId</span>
+                                        <span className={styl.key}>environment</span>
                                         <span className={styl.operator}>:&nbsp;</span>
-                                        <span className={styl.string}>"{props.config.sessionId}"</span>
-                                </div>
-                                <div className={styl.braces}>{"}"}</div>
-                                <div className={styl.nextLine}></div>
-                                <span className={styl.dataType}>const&nbsp;</span>
-                                <span className={styl.operator}>Main&nbsp;</span>
-                                <span className={styl.equals}>=&nbsp;</span>
-                                <span className={styl.braces}>()&nbsp;</span>
-                                <span className={styl.dataType}>{"=>"}</span>
-                                <div className={styl.codeLine}>
-                                        <span className={styl.braces}>{"<"}</span>
-                                        <span className={styl.comp}>RootzDevtools&nbsp;</span>
-                                        <span className={styl.variable}>env</span>
-                                        <span className={styl.braces}>{"={"}</span>
                                         <span className={styl.key}>process</span>
                                         <span className={styl.braces}>{"."}</span>
                                         <span className={styl.key}>env</span>
                                         <span className={styl.braces}>{"."}</span>
                                         <span className={styl.variable}>NODE_ENV</span>
-                                        <span className={styl.braces}>{"}"}&nbsp;</span>
-                                        <span className={styl.variable}>config</span>
-                                        <span className={styl.braces}>{"={config}"}</span>
-                                        <span className={styl.braces}>{">"}</span>
-                                </div>
-                                <div className={styl.codeLine} style={{ marginLeft: 70 }}>
-                                        <span className={styl.braces}>{"<"}</span>
-                                        <span className={styl.comp}>App&nbsp;</span>
-                                        <span className={styl.braces}>{"/>"}</span>
+                                        <span className={styl.braces}>,</span>
                                 </div>
                                 <div className={styl.codeLine}>
-                                        <span className={styl.braces}>{"</"}</span>
-                                        <span className={styl.comp}>RootzDevtools</span>
-                                        <span className={styl.braces}>{">"}</span>
+                                        <span className={styl.key}>config</span>
+                                        <span className={styl.operator}>:&nbsp;</span>
+                                        <span className={styl.braces}>{"{"}</span>
                                 </div>
+                                <div className={styl.codeLine} style={{ marginLeft: 70 }}>
+                                        <span className={styl.key}>type</span>
+                                        <span className={styl.operator}>:&nbsp;</span>
+                                        <span className={styl.string}>"guest"</span>
+                                        <span className={styl.braces}>,</span>
+                                </div>
+                                <div className={styl.codeLine} style={{ marginLeft: 70 }}>
+                                        <span className={styl.key}>sessionId</span>
+                                        <span className={styl.operator}>:&nbsp;</span>
+                                        <span className={styl.string}>"{props.config.sessionId}"</span>
+                                </div>
+                                <div className={`${styl.codeLine} ${styl.braces}`} >{"}"}</div>
+                                <div className={styl.braces}>{"}"}</div>
+
+                                <div className={styl.nextLine}></div>
+                                <span className={styl.dataType}>const&nbsp;</span>
+                                <span className={styl.operator}>Main&nbsp;</span>
+                                <span className={styl.equals}>=&nbsp;</span>
+                                <span className={styl.braces}>RootzDevtools.</span>
+                                <span className={styl.operator}>connect</span>
+                                <span className={styl.braces}>{"(devtoolsConfig);"}</span>
+
                                 <div className={styl.nextLine}></div>
                                 <span className={styl.braces}>{"ReactDOM."}</span>
                                 <span className={styl.operator}>render</span>

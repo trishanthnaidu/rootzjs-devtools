@@ -28,9 +28,7 @@ const Component = ({
         const styl = Styles()
         return (
                 <div className={styl.root}>
-                        <div className={styl.heading}>
-                                Welcome to Rootz Devtools
-                        </div>
+                        <div className={styl.heading}></div>
                         <TabContext value={state.index}>
                                 <AppBar position="static" className={styl.appBar}>
                                         <Tabs
