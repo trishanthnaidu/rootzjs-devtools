@@ -21,9 +21,9 @@ export const Styles = makeStyles(theme => ({
       },
       drawerPaper: {
             width: drawerWidth,
-            backgroundColor: theme.background[20],
+            backgroundColor: theme.text[90],
             color: theme.text[10],
-            borderRight: `solid 1px ${theme.text[80]}`,
+            borderRight: "none",
       },
       drawerPaperMobile: {
             width: drawerWidthMobile,
@@ -43,7 +43,7 @@ export const Styles = makeStyles(theme => ({
             fontSize: 11
       },
       listItem: {
-            padding: "4px 0 4px 14px",
+            padding: "4px 0 4px 24px",
       },
       activeSection: {
             backgroundColor: fade(theme.palette.primary.main, 0.175),
@@ -54,11 +54,12 @@ export const Styles = makeStyles(theme => ({
                   fill: theme.palette.primary.main
             },
             "& span": {
-                  color: theme.text[10],
+                  fontWeight: "bold",
+                  color: theme.palette.primary.main,
             }
       },
       sectionText: {
-            color: theme.text[20],
+            color: theme.palette.primary.main,
 
             "& span": {
                   fontSize: 15

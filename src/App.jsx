@@ -59,7 +59,7 @@ const Component = ({
             };
       }, []);
 
-      if (state.hasGuestArrived) {
+      if (!state.hasGuestArrived) {
             return (
                   <Master {...props} version="0.1.0" />
             )

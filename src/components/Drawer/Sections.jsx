@@ -28,9 +28,9 @@ const Component = ({
                                                       className={`${styl.listItem} ${props.activeSection === text + " rootz" && styl.activeSection}`}
                                                       onClick={() => actions.onSectionClick(text + " rootz", props.history)}
                                                 >
-                                                      <ListItemIcon className={styl.icons}>
+                                                      {/* <ListItemIcon className={styl.icons}>
                                                             <MappedIcons className={styl.iconSvg} />
-                                                      </ListItemIcon>
+                                                      </ListItemIcon> */}
                                                       <ListItemText primary={text} className={styl.sectionText} />
                                                 </ListItem>
                                           )
@@ -51,9 +51,9 @@ const Component = ({
                                                       className={`${styl.listItem} ${props.activeSection === text + " differenz" && styl.activeSection}`}
                                                       onClick={() => actions.onSectionClick(text + " differenz", props.history)}
                                                 >
-                                                      <ListItemIcon className={styl.icons}>
+                                                      {/* <ListItemIcon className={styl.icons}>
                                                             <MappedIcons className={styl.iconSvg} />
-                                                      </ListItemIcon>
+                                                      </ListItemIcon> */}
                                                       <ListItemText primary={text} className={styl.sectionText} />
                                                 </ListItem>
                                           )

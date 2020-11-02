@@ -43,10 +43,10 @@ const init = theme => {
                                         cursor: "pointer", toEndSegmentLength: 50, fromEndSegmentLength: 40
                                 },
                                 new go.Binding('stroke', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[70];
+                                        return impacted ? "#CA3112" : theme.text[70];
                                 }),
                                 new go.Binding('fill', 'impacted', function (impacted) {
-                                        return impacted ? "#663838" : theme.background[20];
+                                        return impacted ? "#ebd8d6" : theme.background[20];
                                 }),
                         ),
                         $(go.TextBlock, "Page",

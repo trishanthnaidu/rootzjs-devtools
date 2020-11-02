@@ -25,11 +25,11 @@ export const Styles = makeStyles(theme => ({
                 },
                 "& span": {
                         fontWeight: "bold",
-                        color: theme.text[10],
+                        color: theme.palette.primary.main,
                 }
         },
         sectionText: {
-                color: theme.text[30],
+                color: theme.palette.primary.main,
 
                 "& span": {
                         fontSize: 15
@@ -39,7 +39,7 @@ export const Styles = makeStyles(theme => ({
                 paddingLeft: 20,
                 lineHeight: "30px",
                 fontWeight: "bold",
-                color: theme.text[50],
+                color: theme.text[60],
                 textTransform: "uppercase",
 
                 "& span": {

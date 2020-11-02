@@ -84,12 +84,12 @@ const init = theme => {
                         $(go.Shape,  // the link shape
                                 { strokeWidth: 1 },
                                 new go.Binding('stroke', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 })),
                         $(go.Shape,  // the arrowhead
                                 { stroke: null },
                                 new go.Binding('fill', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 }),
                                 new go.Binding('toArrow', 'impacted', function (impacted) {
                                         return impacted ? "standard" : "circle";
@@ -100,7 +100,7 @@ const init = theme => {
                         $(go.Panel, "Auto",
                                 $(go.Shape, "RoundedRectangle",  // the label background, which becomes transparent around the edges
                                         {
-                                                fill: "#384366",
+                                                fill: "#cad6e2",
                                                 stroke: theme.palette.secondary.main,
                                         },
                                         new go.Binding('visible', 'impacted', function (impacted) {

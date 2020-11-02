@@ -76,13 +76,13 @@ const init = theme => {
                         $(go.Shape,  // the link shape
                                 { strokeWidth: 1 },
                                 new go.Binding('stroke', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 }),
                         ),
                         $(go.Shape,  // the arrowhead
                                 { stroke: null },
                                 new go.Binding('fill', 'impacted', function (impacted) {
-                                        return impacted ? theme.palette.primary.main : theme.text[50];
+                                        return impacted ? "#CA3112" : theme.text[50];
                                 }),
                                 new go.Binding('toArrow', 'impacted', function (impacted) {
                                         return impacted ? "standard" : "circle";
