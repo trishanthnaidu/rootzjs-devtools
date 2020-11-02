@@ -5,7 +5,7 @@ import { CssBaseline, } from './Matlib';
 import { createNode } from '@rootzjs/core';
 import { AppHeader } from './Header/AppHeader';
 import { SplashPlayground } from './Modules/Splash';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // IMPORT ACTIONS
 import { onErrorOccured } from './actions/Master';
@@ -17,7 +17,7 @@ const Component = ({
         state,
         props,
 }) => {
-        const theme = "dark";
+        const theme = "light";
         return (
                 <AppTheme theme={theme} forComponent="APP">
                         <SplashContent theme={theme} {...props} />
@@ -30,13 +30,15 @@ const SplashContent = props => {
         const Body = () => <SplashPlayground {...props} />
         return (
                 <Router>
-                        <div className={styl.root} >
-                                <CssBaseline />
-                                <AppHeader theme={props.theme} />
-                                <div className={styl.playgroundMasterContainer}>
-                                        <Route exact path="/" component={Body} />
+                        <Switch>
+                                <div className={styl.root} >
+                                        <CssBaseline />
+                                        <AppHeader theme={props.theme} />
+                                        <div className={styl.playgroundMasterContainer}>
+                                                <Route exact path="/" component={Body} />
+                                        </div>
                                 </div>
-                        </div>
+                        </Switch>
                 </Router>
         )
 }

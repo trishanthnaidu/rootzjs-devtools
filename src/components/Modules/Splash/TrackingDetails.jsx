@@ -31,7 +31,7 @@ const Component = ({
                 <div className={styl.root}>
                         <InputBase
                                 ref={linkRef}
-                                defaultValue={`{ type: "guest", sessionId: "${props.config.id}" }`}
+                                defaultValue={`{ type: "guest", sessionId: "${props.config.sessionId}" }`}
                                 className={styl.inputBase}
                         />
                         <div id="config" className={styl.configContainer}>
@@ -40,11 +40,12 @@ const Component = ({
                                         <span className={styl.key}>type</span>
                                         <span className={styl.operator}>:&nbsp;</span>
                                         <span className={styl.string}>"guest"</span>
+                                        <span className={styl.braces}>,</span>
                                 </div>
                                 <div className={styl.codeLine}>
                                         <span className={styl.key}>sessionId</span>
                                         <span className={styl.operator}>:&nbsp;</span>
-                                        <span className={styl.string}>"{props.config.id}"</span>
+                                        <span className={styl.string}>"{props.config.sessionId}"</span>
                                 </div>
                                 <div className={styl.braces}>{"}"}</div>
 

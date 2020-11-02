@@ -18,8 +18,8 @@ export const Styles = makeStyles(theme => ({
         heading:{
                 fontSize: 25,
                 display: "flex",
-                margin: "50px 0 40px",
-                color: theme.text[50],
+                margin: "50px 0 25px",
+                color: theme.palette.primary.main,
                 justifyContent: "center",
         },
         appBar: {
@@ -39,6 +39,7 @@ export const Styles = makeStyles(theme => ({
                 borderRadius: 4
         },
         tabsSelected: {
-                color: `${theme.text[10]} !important`
+                color: `${theme.text[30]} !important`,
+                backgroundColor: theme.background["00"],
         }
 }))

@@ -1,5 +1,6 @@
 import React from 'react';
 import { createNode } from '@rootzjs/core';
+import { withRouter } from 'react-router-dom';
 import {
         Tab,
         Tabs,
@@ -24,7 +25,7 @@ const Component = ({
         state,
         actions
 }) => {
-        const styl = Styles();
+        const styl = Styles()
         return (
                 <div className={styl.root}>
                         <div className={styl.heading}>
@@ -75,9 +76,11 @@ const Component = ({
         );
 }
 
-export const SplashPlayground = createNode({
-        actions,
-        Component,
-        id: "#SplashPlayground",
-        state: initialState
-})
+export const SplashPlayground = withRouter(
+        createNode({
+                actions,
+                Component,
+                id: "#SplashPlayground",
+                state: initialState
+        })
+)

@@ -8,7 +8,10 @@ import { initConn } from './service/InitConn';
 import './assets/stylesheets/animate.css';
 
 let sessionId = "";
-const whenConnected = data => ({ isConnected: data.isConnected || false });
+const whenConnected = data => ({
+      isConnected: data.isConnected || false,
+      hasGuestArrived: data.hasGuestArrived || false
+});
 const actions = [[whenConnected], []];
 const initalState = { isConnected: false, hasGuestArrived: false };
 const cachedSessionId = sessionStorage.getItem("__rootzSessionId");
@@ -20,7 +23,7 @@ if (Boolean(cachedSessionId)) {
       sessionId = Crypto.MD5(new Date().getTime());
       sessionStorage.setItem("__rootzSessionId", sessionId);
 }
-const config = { id: sessionId, type: 'host' };
+const config = { sessionId: sessionId, type: 'host' };
 
 const Component = ({
       props,

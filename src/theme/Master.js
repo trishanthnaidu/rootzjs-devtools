@@ -1,4 +1,4 @@
-export const PRIMARY_COLOR = "#FF2800";
+export const PRIMARY_COLOR = "#677b8c";
 export const STUDIO_COLOR = "#4675FF";
 export const PRIMARY_FONT_SIZE = 13;
 export const DARK_THEME_PROPS = {
@@ -41,21 +41,21 @@ export const LIGHT_THEME_PROPS = {
       TYPE: "light",
       TEXT: {
             "00": "#000000",
-            "10": "#222222",
-            "20": "#444444",
-            "30": "#666666",
-            "40": "#888888",
-            "50": "#AAAAAA",
-            "60": "#CCCCCC",
-            "70": "#DDDDDD",
-            "80": "#EEEEEE",
-            "90": "#F8F9FA"
+            "10": "#303B48",
+            "20": "#465465",
+            "30": "#627788",
+            "40": "#788C9C",
+            "50": "#9EAfBD",
+            "60": "#ABB3BD",
+            "70": "#C7D0D8",
+            "80": "#DADFE4",
+            "90": "#E6EAEF"
       },
       BACKGROUND: {
             "00": "#FFFFFF",
-            "10": "#F6F5F4",
-            "20": "#EEEEEE",
-            "30": "#E2E2E2",
+            "10": "#EFF1F3",
+            "20": "#FFFFFF",
+            "30": "#DFE3E6",
             "none": "transparent"
       },
       REVERSE: {

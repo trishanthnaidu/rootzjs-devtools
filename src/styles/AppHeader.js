@@ -8,7 +8,6 @@ export const Styles = makeStyles(theme => ({
             height: 48,
             boxShadow: "none",
             zIndex: theme.zIndex.drawer + 1,
-            borderBottom: `solid 1px ${theme.text[80]}`,
             backgroundColor: theme.background["00"],
       },
       divider: theme.divider["00"],
@@ -25,7 +24,20 @@ export const Styles = makeStyles(theme => ({
             }
       },
       logo: {
-            height: 35,
+            height: 30,
+            marginRight: -5,
+            cursor: "pointer",
+            [theme.breakpoints.up('sm')]: {
+                  display: 'block',
+            },
+
+            "& svg": {
+                  color: theme.text[50],
+            }
+      },
+      logoTitle:{
+            height: "auto",
+            marginBottom: 4,
             cursor: "pointer",
             [theme.breakpoints.up('sm')]: {
                   display: 'block',

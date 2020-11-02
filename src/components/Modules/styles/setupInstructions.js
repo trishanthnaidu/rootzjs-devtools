@@ -9,65 +9,65 @@ export const Styles = makeStyles(theme => ({
                 borderRadius: 7,
                 fontFamily: "menlo",
                 padding: "8px 12px",
-                border: `solid 1px ${theme.text[80]}`,
+                border: `solid 1px ${theme.text[90]}`,
                 backgroundColor: fade(theme.background[20], 0.6),
         },
         copyBtn: {
                 margin: "10px 0",
                 padding: "6px 10px",
-                color: theme.text[10],
+                color: theme.text[90],
                 textTransform: "capitalize",
-                backgroundColor: theme.palette.secondary.main,
+                backgroundColor: theme.palette.primary.main,
 
                 "&:hover": {
-                        backgroundColor: fade(theme.palette.secondary.main, 0.8),
+                        backgroundColor: fade(theme.palette.primary.main, 0.8),
                 }
         },
         copiedBtn: {
                 margin: "10px 0",
                 padding: "6px 10px",
-                color: theme.text[10],
+                color: "#31636E",
                 textTransform: "capitalize",
-                backgroundColor: "#479030",
+                backgroundColor: "#BFE0D6",
 
                 "&:hover": {
-                        backgroundColor: fade("#479030", 0.8),
+                        backgroundColor: "#BFE0D6",
                 }
         },
         codeLine: {
                 marginLeft: 35,
         },
         braces: {
-                color: "#ABB2BF"
+                color: "#767C88"
         },
         key: {
-                color: "#E06C75"
+                color: "#E45649"
         },
         operator: {
-                color: "#5EA8E6"
+                color: "#4078F2"
         },
         string: {
-                color: "#98C379"
+                color: "#50A14F"
         },
         note: {
                 marginTop: 20,
                 color: theme.text[50]
         },
         variable: {
-                color: "#D19A66"
+                color: "#986801"
         },
         dataType: {
-                color: "#C678DD"
+                color: "#A626A4"
         },
         comments: {
-                color: "#5C6371",
+                color: "#B9BFCC",
                 fontStyle: "italic"
         },
         equals: {
-                color: "#56B6C2"
+                color: "#0084BC"
         },
         comp: {
-                color: "#E5C07B"
+                color: "#C18402"
         },
         nextLine: {
                 margin: "25px 0"
@@ -82,15 +82,15 @@ export const Styles = makeStyles(theme => ({
                 }
         },
         contentPoints: {
-                margin: "20px 0 5px",
-                color: theme.text[40],
+                margin: "25px 0 5px",
+                color: theme.text[20],
 
                 "&:first-child": {
                         marginTop: 0
                 }
         },
         notation: {
-                color: theme.text[50],
+                color: theme.text[40],
                 fontStyle: "italic"
         },
         inputBase: {

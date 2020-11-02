@@ -21,7 +21,7 @@ import { ComponentRootz } from "./Modules/Rootz/Component";
 import { Styles } from '../styles/Master';
 
 const initialState = {
-      theme: "dark",
+      theme: "light",
       errorDetails: "",
       isAuthenticated: false,
       didSomethingWentWrong: false,

@@ -5,6 +5,7 @@ import { IconButton } from '../Matlib';
 import { Styles } from "../../styles/AppHeader";
 import logo from '../../assets/images/logo.svg';
 import logoDark from '../../assets/images/logoDark.svg';
+import titleLogo from '../../assets/images/title.svg';
 
 const navigateTo = (history, route) => {
         history.push(route);
@@ -19,6 +20,7 @@ const Component = ({ props }) => {
                         <div className={styl.logoContainer}>
                                 <IconButton className={styl.iconContainer} disabled>
                                         <img className={styl.logo} src={isLight ? logo : logoDark} alt="logo" />
+                                        <img className={styl.logoTitle} src={titleLogo} alt="logo" />
                                 </IconButton>
                         </div>
                 </React.Fragment>
