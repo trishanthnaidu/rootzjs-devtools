@@ -25,6 +25,7 @@ const Component = ({
                                           return (
                                                 <ListItem
                                                       button
+                                                      key={text + index}
                                                       className={`${styl.listItem} ${props.activeSection === text + " rootz" && styl.activeSection}`}
                                                       onClick={() => actions.onSectionClick(text + " rootz", props.history)}
                                                 >
@@ -49,6 +50,7 @@ const Component = ({
                                           return (
                                                 <ListItem
                                                       button
+                                                      key={text + index}
                                                       className={`${styl.listItem} ${props.activeSection === text + " differenz" && styl.activeSection}`}
                                                       onClick={() => actions.onSectionClick(text + " differenz", props.history)}
                                                 >

@@ -13,6 +13,7 @@ import { onErrorOccured } from './actions/Master';
 
 // IMPORT MODULES 
 import { StateRootz } from "./Modules/Rootz/State";
+import { GuestInvitation } from './GuestInvitation';
 import { ActionRootz } from "./Modules/Rootz/Action";
 import { ImpactRootz } from "./Modules/Rootz/Impact";
 import { ComponentRootz } from "./Modules/Rootz/Component";
@@ -25,6 +26,23 @@ const initialState = {
       errorDetails: "",
       isAuthenticated: false,
       didSomethingWentWrong: false,
+}
+const extractQueryFromURL = () => {
+      try {
+            return JSON.parse(decodeURIComponent(window.location.search).replace("?", ""));
+      } catch {
+            return {}
+      }
+}
+const getFilters = props => {
+      const queryData = extractQueryFromURL();
+      if (Boolean(Object.keys(queryData).length) && queryData.hasOwnProperty("isInvite")) {
+            return {
+                  ...queryData
+            }
+      } else {
+            return false
+      }
 }
 
 const Component = ({ state, props, actions }) => {
@@ -41,24 +59,35 @@ const Component = ({ state, props, actions }) => {
 
 const ApplicationMaster = props => {
       const styl = Styles();
+      const filters = getFilters();
+      const isInvite = Boolean(filters);
+
       return (
             <Router>
                   <div className={styl.root} >
                         <CssBaseline />
-                        <AppHeader theme={props.theme} />
+                        <AppHeader theme={props.theme} config={props.config} />
                         <AppDrawer theme={props.theme} />
-                        <PlaygroundRoute {...props} />
                         {
-                              !props.didSomethingWentWrong ?
-                                    <React.Fragment></React.Fragment>
+                              isInvite ?
+                                    <GuestInvitation />
                                     :
-                                    <OopsSomethingWentWrong
-                                          details={props.errorDetails}
-                                          onReload={() => {
-                                                window.location.reload(true)
-                                          }}
-                                    />
+                                    <React.Fragment>
+                                          <PlaygroundRoute {...props} />
+                                          {
+                                                !props.didSomethingWentWrong ?
+                                                      <React.Fragment></React.Fragment>
+                                                      :
+                                                      <OopsSomethingWentWrong
+                                                            details={props.errorDetails}
+                                                            onReload={() => {
+                                                                  window.location.reload(true)
+                                                            }}
+                                                      />
+                                          }
+                                    </React.Fragment>
                         }
+
                   </div>
             </Router>
       )

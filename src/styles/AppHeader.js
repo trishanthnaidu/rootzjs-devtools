@@ -18,7 +18,7 @@ export const Styles = makeStyles(theme => ({
       logoContainer: {
             flex: 1,
             marginRight: 10,
-            
+
             "& button": {
                   padding: "7px 0 0 0",
             }
@@ -35,7 +35,7 @@ export const Styles = makeStyles(theme => ({
                   color: theme.text[50],
             }
       },
-      logoTitle:{
+      logoTitle: {
             height: "auto",
             marginBottom: 4,
             cursor: "pointer",
@@ -152,4 +152,43 @@ export const Styles = makeStyles(theme => ({
             color: theme.text[10],
             padding: 7,
       },
+      copyMenuWrapper: {
+            padding: 0
+      },
+      copyMenuPaper: {
+            padding: 0,
+            boxShadow: theme.shadow[10],
+            backgroundColor: theme.background["00"],
+
+            "& ul": {
+                  padding: 0
+            }
+      },
+      copyMenuContainer: {
+            display: "flex",
+            padding: 0,
+            alignItems: "center",
+            outline: "none",
+
+            "& svg": {
+                  outline: "none",
+                  margin: "5px 15px",
+                  color: theme.palette.primary.main,
+            }
+      },
+      link: {
+            marginLeft: 15,
+            color: theme.text[30]
+      },
+      lblCopied: {
+            padding: 10,
+            marginLeft: 10,
+            color: "#31636E",
+            backgroundColor: "#BFE0D6",
+            textTransform: "capitalize",
+
+            "&:hover": {
+                    backgroundColor: "#BFE0D6",
+            }
+      }
 }));

@@ -1,3 +1,5 @@
+import io from 'socket.io'
+
 export const initConn = () => {
         const ws = window.WebSocket || window.MozWebSocket;
         if (!window.WebSocket) {

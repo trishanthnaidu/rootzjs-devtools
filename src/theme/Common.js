@@ -78,5 +78,10 @@ export const commonThemeStyles = selectedTheme => ({
                   }
             }
       },
+      shadow: {
+            "00": "1px 1px 3px 1px rgba(0,0,0,0.25)",
+            "10": "1px 1px 3px 1px rgba(0,0,0,0.1)",
+            "20": "1px 1px 3px 1px rgba(0,0,0,0.05)",
+      },
       isMobile: /Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 });
