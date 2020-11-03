@@ -61,35 +61,43 @@ const Component = ({
                                                 :
                                                 <DesktopToolbar isLight={isLight} />
                                     }
-                                    <Menu
-                                          keepMounted
-                                          elevation={0}
-                                          getContentAnchorEl={null}
-                                          anchorEl={state.anchorEl}
-                                          onClose={actions.handleClose}
-                                          open={Boolean(state.anchorEl)}
-                                          className={styl.copyMenuWrapper}
-                                          PopoverClasses={{
-                                                paper: styl.copyMenuPaper
-                                          }}
-                                          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                                          transformOrigin={{ vertical: "top", horizontal: "center" }}
-                                    >
-                                          <MenuList className={styl.copyMenuContainer}>
-                                                <InputBase
-                                                      readOnly
-                                                      value={URL}
-                                                      ref={linkRef}
-                                                      className={styl.link}
-                                                />
-                                                <Typography className={styl.lblCopied}>Link Copied</Typography>
-                                          </MenuList>
-                                    </Menu>
-                                    <Tooltip title={`Invite Guests`} >
-                                          <IconButton className={styl.iconButton} onClick={actions.onMenuOpen} >
-                                                <GroupAddRounded />
-                                          </IconButton>
-                                    </Tooltip>
+                                    {
+                                          !props.noIcons &&
+                                          (
+                                                <React.Fragment>
+                                                      <Menu
+                                                            keepMounted
+                                                            elevation={0}
+                                                            getContentAnchorEl={null}
+                                                            anchorEl={state.anchorEl}
+                                                            onClose={actions.handleClose}
+                                                            open={Boolean(state.anchorEl)}
+                                                            className={styl.copyMenuWrapper}
+                                                            PopoverClasses={{
+                                                                  paper: styl.copyMenuPaper
+                                                            }}
+                                                            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                                                            transformOrigin={{ vertical: "top", horizontal: "center" }}
+                                                      >
+                                                            <MenuList className={styl.copyMenuContainer}>
+                                                                  <InputBase
+                                                                        readOnly
+                                                                        value={URL}
+                                                                        ref={linkRef}
+                                                                        className={styl.link}
+                                                                  />
+                                                                  <Typography className={styl.lblCopied}>Link Copied</Typography>
+                                                            </MenuList>
+                                                      </Menu>
+                                                      <Tooltip title={`Invite Guests`} >
+                                                            <IconButton className={styl.iconButton} onClick={actions.onMenuOpen} >
+                                                                  <GroupAddRounded />
+                                                            </IconButton>
+                                                      </Tooltip>
+                                                </React.Fragment>
+                                          )
+                                    }
+
                               </Toolbar>
                         </AppBar>
                   </TabContext>

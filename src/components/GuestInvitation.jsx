@@ -34,7 +34,7 @@ const InvitationContent = props => {
                         <Switch>
                                 <div className={styl.root} >
                                         <CssBaseline />
-                                        <AppHeader theme={props.theme} />
+                                        <AppHeader theme={props.theme} noIcons={true} />
                                         <div className={styl.playgroundMasterContainer}>
                                                 <Route exact path="/invite" component={() => <InvitationPlayground {...props} />} />
                                         </div>

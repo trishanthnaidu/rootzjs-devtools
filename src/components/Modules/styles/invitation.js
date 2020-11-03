@@ -11,14 +11,18 @@ export const Styles = makeStyles(theme => ({
         },
         container: {
                 width: 500,
-                height: 300,
                 padding: 10,
                 display: "flex",
+                flex: "0.5 1 auto",
                 flexDirection: "column",
         },
         designWrapper: {
+                margin: 25,
                 width: "100%",
-                height: "70%",
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "center",
         },
         inputWrapper: {
                 width: "100%",
@@ -51,5 +55,30 @@ export const Styles = makeStyles(theme => ({
                 "&:hover": {
                         backgroundColor: fade(theme.palette.primary.main, 0.8),
                 }
-        }
+        },
+        collaborateImg: {
+                width: "90%"
+        },
+        collaborateText: {
+                padding: 20,
+                fontSize: 40,
+                fontWeight: "300",
+                animation: "smoothRollUp 3s ease-out both;",
+                color: fade(theme.palette.primary.main, 0.5),
+        },
+        ReviewText: {
+                padding: 20,
+                fontSize: 40,
+                fontWeight: "300",
+                animation: "smoothRollUp 5s ease-out both;",
+                color: fade(theme.palette.primary.main, 0.7),
+        },
+        ImproviseText: {
+                padding: 20,
+                fontSize: 40,
+                fontWeight: "300",
+                animation: "smoothRollUp 7s ease-out both;",
+                color: fade(theme.palette.primary.main, 1),
+        },
+        verticalDivider: theme.verticalDivider["00"]
 }))

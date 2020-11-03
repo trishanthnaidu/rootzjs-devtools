@@ -24,7 +24,7 @@ DemoForceDirectedLayout.prototype.makeNetwork = function (coll) {
 const init = theme => {
         let $ = go.GraphObject.make;  // for conciseness in defining templates
 
-        let bigfont = '13px Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+        let bigfont = '15px Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
         // Common text styling
         function textStyle() {

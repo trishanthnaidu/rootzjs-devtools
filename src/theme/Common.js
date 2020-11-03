@@ -20,12 +20,14 @@ export const commonThemeStyles = selectedTheme => ({
       },
       verticalDivider: {
             "00": {
+                  width: 1,
                   height: 'auto',
                   margin: "8px 4px",
                   alignSelf: 'stretch',
                   backgroundColor: themeCollections[selectedTheme].text[80],
             },
             "10": {
+                  width: 1,
                   height: '80%',
                   margin: "8px 4px",
                   alignSelf: 'stretch',
@@ -33,7 +35,7 @@ export const commonThemeStyles = selectedTheme => ({
             }
       },
       animation: {
-            smoothRollUp: "smoothRollUp 0.3s ease-out both;",
+            smoothRollUp: "smoothRollUp 1s ease-out both;",
       },
       ellipsis: {
             whiteSpace: "nowrap",

@@ -26,7 +26,7 @@ DemoForceDirectedLayout.prototype.makeNetwork = function (coll) {
 const init = theme => {
         let $ = go.GraphObject.make;  // for conciseness in defining templates
 
-        let bigfont = '13px Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+        let bigfont = '15px Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
         // Common text styling
         function textStyle() {
@@ -63,7 +63,7 @@ const init = theme => {
                                 {
                                         fill: theme.background[20], stroke: theme.text[70], strokeWidth: 1,
                                         portId: "", fromLinkable: true, toLinkable: true, cursor: "pointer",
-                                        toEndSegmentLength: 50, fromEndSegmentLength: 40
+                                        toEndSegmentLength: 50, fromEndSegmentLength: 50
                                 }),
                         $(go.TextBlock, "Page",
                                 textStyle(),

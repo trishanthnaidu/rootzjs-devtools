@@ -46,7 +46,7 @@ const ApplicationMaster = props => {
             <Router>
                   <div className={styl.root} >
                         <CssBaseline />
-                        <AppHeader theme={props.theme} config={props.config} />
+                        <AppHeader theme={props.theme} config={props.config} noIcons={false} />
                         <AppDrawer theme={props.theme} />
                         <PlaygroundRoute {...props} />
                         {

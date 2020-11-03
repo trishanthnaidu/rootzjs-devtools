@@ -2,6 +2,7 @@ import React from 'react';
 import { createLeaf } from '@rootzjs/core';
 import {
         Button,
+        Divider,
         InputBase,
 } from '../../Matlib';
 
@@ -24,7 +25,11 @@ const Component = ({
                 <div className={styl.root}>
                         <div className={styl.container}>
                                 <div className={styl.designWrapper}>
-
+                                        <div className={styl.collaborateText}>Collaborate</div>
+                                        <Divider className={styl.verticalDivider} ></Divider>
+                                        <div className={styl.ReviewText}>Review</div>
+                                        <Divider className={styl.verticalDivider} ></Divider>
+                                        <div className={styl.ImproviseText}>Improvise</div>
                                 </div>
                                 <div className={styl.inputWrapper}>
                                         <InputBase
