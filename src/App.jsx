@@ -1,43 +1,56 @@
 import React from 'react';
-import Crypto from 'crypto-js';
 import { createNode } from '@rootzjs/core';
 import { Splash } from './components/Splash';
 import { Master } from "./components/Master";
 import { initConn } from './service/InitConn';
+import { GuestInvitation } from './components/GuestInvitation';
+import { getSessionId, whenConnected } from './components/actions/App';
 
 import './assets/stylesheets/animate.css';
 
-let sessionId = "";
-const whenConnected = data => ({
-      isConnected: data.isConnected || false,
-      hasGuestArrived: data.hasGuestArrived || false
-});
-const actions = [[whenConnected], []];
-const initalState = { isConnected: false, hasGuestArrived: false };
-const cachedSessionId = sessionStorage.getItem("__rootzSessionId");
-
-// use cached SessionId id present
-if (Boolean(cachedSessionId)) {
-      sessionId = cachedSessionId;
-} else {
-      sessionId = Crypto.MD5(new Date().getTime());
-      sessionStorage.setItem("__rootzSessionId", sessionId);
-}
+const initalState = {
+      isConnected: false,
+      hasHostArrived: false,
+      hasSubmittedName: false
+};
+const sessionId = getSessionId();
 const config = { sessionId: sessionId, type: 'host' };
+const extractQueryFromURL = () => {
+      try {
+            return JSON.parse(decodeURIComponent(window.location.search).replace("?", ""));
+      } catch {
+            return {}
+      }
+}
+const getFilters = props => {
+      const queryData = extractQueryFromURL();
+      if (Boolean(Object.keys(queryData).length) && queryData.hasOwnProperty("isInvite")) {
+            return {
+                  ...queryData
+            }
+      } else {
+            return false
+      }
+}
 
 const Component = ({
       props,
       state,
       actions
 }) => {
+      let conn = initConn();
+      const configQueryString = getFilters();
+      const isInvite = Boolean(configQueryString);
       React.useEffect(() => {
-            let conn = initConn();
             conn.onopen = function () {
                   console.log(
                         "%cconnetion Ok...",
                         "color: #fff; font-size:12px;  border-radius: 3px; padding: 2px 0 2px 7px; text-align: center; background-color: #e91e63a9;"
                   );
-                  conn.send(JSON.stringify(config));
+
+                  if (!isInvite) {
+                        conn.send(JSON.stringify(config));
+                  }
             };
             conn.onerror = function (error) {
                   console.log(
@@ -59,21 +72,34 @@ const Component = ({
             };
       }, []);
 
-      if (!state.hasGuestArrived) {
-            return (
-                  <Master {...props} config={config} version="0.1.0" />
-            )
+      if (isInvite) {
+            if (state.hasSubmittedName) {
+                  return (
+                        <Master {...props} config={config} version="0.1.0" />
+                  )
+            } else {
+                  return (
+                        <GuestInvitation conn={conn} config={configQueryString} />
+                  )
+            }
       } else {
-            return (
-                  <Splash config={config} />
-            )
+            if (!state.hasHostArrived) {
+                  return (
+                        <Master {...props} config={config} version="0.1.0" />
+                  )
+            } else {
+                  return (
+                        <Splash config={config} />
+                  )
+            }
       }
-
 }
+const selfActions = [whenConnected];
+const actions = [selfActions, []];
 
 export const RootzjsOrg = createNode({
       actions,
       Component,
-      id: "#Root",
+      id: "#App",
       state: initalState
 })

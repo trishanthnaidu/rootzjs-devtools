@@ -40,7 +40,7 @@ const Component = ({
       const appTheme = useTheme();
       const isLight = props.theme === "light";
       const shareUrlQuery = encodeURIComponent(JSON.stringify({ ...props.config, isInvite: true }));
-      const URL = `${window.location.origin}invite?${shareUrlQuery}`;
+      const URL = `${window.location.origin}/invite?${shareUrlQuery}`;
       React.useEffect(() => {
             if (state.anchorEl != null) {
                   linkRef.current.children[0].select();
@@ -98,7 +98,7 @@ const Component = ({
 }
 
 const selfActions = [handleClose, onMenuOpen];
-const contract = createContract({ "#Master": onThemeChange });
+const contract = createContract({ "#ApplicationMaster": onThemeChange });
 const actions = [selfActions, contract];
 
 export const AppHeader = withRouter(

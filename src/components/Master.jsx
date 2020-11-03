@@ -3,7 +3,7 @@ import React from 'react';
 import { AppDrawer } from './Drawer';
 import { CssBaseline } from './Matlib';
 import { AppTheme } from '../theme/App';
-import { createNode, getAllState } from '@rootzjs/core';
+import { createNode } from '@rootzjs/core';
 import { AppHeader } from './Header/AppHeader';
 import { windowErrorHandler, OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
@@ -13,7 +13,6 @@ import { onErrorOccured } from './actions/Master';
 
 // IMPORT MODULES 
 import { StateRootz } from "./Modules/Rootz/State";
-import { GuestInvitation } from './GuestInvitation';
 import { ActionRootz } from "./Modules/Rootz/Action";
 import { ImpactRootz } from "./Modules/Rootz/Impact";
 import { ComponentRootz } from "./Modules/Rootz/Component";
@@ -26,23 +25,6 @@ const initialState = {
       errorDetails: "",
       isAuthenticated: false,
       didSomethingWentWrong: false,
-}
-const extractQueryFromURL = () => {
-      try {
-            return JSON.parse(decodeURIComponent(window.location.search).replace("?", ""));
-      } catch {
-            return {}
-      }
-}
-const getFilters = props => {
-      const queryData = extractQueryFromURL();
-      if (Boolean(Object.keys(queryData).length) && queryData.hasOwnProperty("isInvite")) {
-            return {
-                  ...queryData
-            }
-      } else {
-            return false
-      }
 }
 
 const Component = ({ state, props, actions }) => {
@@ -59,8 +41,6 @@ const Component = ({ state, props, actions }) => {
 
 const ApplicationMaster = props => {
       const styl = Styles();
-      const filters = getFilters();
-      const isInvite = Boolean(filters);
 
       return (
             <Router>
@@ -68,24 +48,17 @@ const ApplicationMaster = props => {
                         <CssBaseline />
                         <AppHeader theme={props.theme} config={props.config} />
                         <AppDrawer theme={props.theme} />
+                        <PlaygroundRoute {...props} />
                         {
-                              isInvite ?
-                                    <GuestInvitation />
+                              !props.didSomethingWentWrong ?
+                                    <React.Fragment></React.Fragment>
                                     :
-                                    <React.Fragment>
-                                          <PlaygroundRoute {...props} />
-                                          {
-                                                !props.didSomethingWentWrong ?
-                                                      <React.Fragment></React.Fragment>
-                                                      :
-                                                      <OopsSomethingWentWrong
-                                                            details={props.errorDetails}
-                                                            onReload={() => {
-                                                                  window.location.reload(true)
-                                                            }}
-                                                      />
-                                          }
-                                    </React.Fragment>
+                                    <OopsSomethingWentWrong
+                                          details={props.errorDetails}
+                                          onReload={() => {
+                                                window.location.reload(true)
+                                          }}
+                                    />
                         }
 
                   </div>
@@ -113,6 +86,6 @@ const actions = [selfActions,]
 export const Master = createNode({
       actions,
       Component,
-      id: "#Master",
+      id: "#ApplicationMaster",
       state: initialState,
 })

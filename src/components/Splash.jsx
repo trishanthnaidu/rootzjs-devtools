@@ -50,5 +50,5 @@ const actions = [selfActions,]
 export const Splash = createNode({
         actions,
         Component,
-        id: "#Splash",
+        id: "#SplashMaster",
 })
